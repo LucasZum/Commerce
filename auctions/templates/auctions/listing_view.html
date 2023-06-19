@@ -1,0 +1,22 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <div class="listing-main-content">
+
+        {% if listing.is_active == True %}
+
+        {% include 'auctions/partials/listing_page.html' %}
+
+        {% else %}
+
+        {% include 'auctions/partials/winner.html' %}
+
+
+        {% endif %}
+
+        
+
+
+
+    </div>
+{% endblock %}

@@ -1,0 +1,199 @@
+body {
+    padding: 10px;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+a{
+    text-decoration: none;
+}
+
+.input-container{
+    margin: 30px 0;
+}
+input, textarea, select{
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 300px;
+    padding: 10px;
+}
+
+label{
+    font-weight: bold;
+}
+textarea{
+    min-height: 145px;
+}
+button{
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+form{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+}
+.form-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 60px;
+    max-width: 1920px;
+    padding: 10px 100px;
+}
+img{
+    width: 100%;
+}
+.listing-container {
+    background: white;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    transition: all 300ms ease-in-out;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    max-width: 30rem;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.content-container p, h3{
+    padding: 10px 0;
+}
+.content-container h3{
+    font-size: 35px;
+}
+.img-container{
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+}
+.content-container{
+    width: 100%;
+    padding: 10px;
+}
+.price{
+    width: 100%;
+}
+
+
+.listing-main-content{
+    max-width: 60rem;
+    justify-content: flex-start;
+}
+.listing-main-content button{
+    width: 200px;
+    border-radius: 5px;
+}
+
+.listing-main-content div{
+    margin: 20px 0;
+}
+.watchlist-button{
+    background-color: rgb(69, 69, 202);
+}
+.watchlist-button-remove{
+    background-color: rgb(217, 56, 56);
+    margin-bottom: 20px;
+}
+.bid-form{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.bid-form input{
+    margin-right: 10px;
+}
+.messages-container {
+    display: flex;
+    flex-flow: column nowrap;
+}
+  
+.message {
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(rgb(212, 67, 67));
+    background: var(#e8383895);
+    color: var(rgb(212, 67, 67));
+}
+
+table{
+    border: 1px solid black;
+    margin: 20px 0;
+}
+td, th{
+    border: 1px solid black;
+    padding: 10px 50px;
+    font-size: 20px;
+}
+.price-p{
+    color: rgb(116, 211, 116);
+    font-size: 35px;
+    font-weight: 800;
+}
+.ultimate-bids{
+    font-size: 25px;
+}
+
+.winner{
+    padding: 20px;
+    border: 1px solid black;
+    width: 500px;
+    border-radius: 5px;
+    background-color:rgba(110, 218, 110, 0.324) ;
+}
+.winner h2{
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.winner p{
+    font-size: 25px;
+}
+
+.winner strong{
+    color: rgb(110, 218, 110);
+}
+
+
+.comment-form .comment-input{
+    width: 300px;
+    min-height: 100px;
+}
+.comment-form{
+    padding: 0;
+    margin: 0;
+}
+.comment-form button{
+    width: 300px;
+    margin-top: 10px;
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.149);
+    color: black;
+}
+.comment{
+    border: 1px solid rgb(167, 167, 167);
+    border-radius: 5px;
+    padding: 0 30px;
+    width: 400px;
+}
+.price p{
+    color: rgb(110, 218, 110);
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 25px;
+}

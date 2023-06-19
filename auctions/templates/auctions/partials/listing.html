@@ -1,0 +1,51 @@
+{% if listings %}
+    {% for list in listings %}
+                
+    <div class="listing-container">
+        <div class="img-container">
+            <img src="{{ list.img_url }}" alt="">
+        </div>
+        <div class="content-container">
+            <h3> {{ list.title }} </h3>
+            <p> {{ list.description }} </p>
+        </div>
+        <div class="price">
+            <p>${{ list.price }}</p>
+            <a href="{% url 'listing' list.id %}">
+                <button>
+                    Visit
+                </button>
+            </a>
+        </div>
+    </div>
+        
+    {% endfor %}
+{% endif %}
+
+{% if watchlist %}
+
+{% for list in watchlist %}
+                
+    <div class="listing-container">
+        <div class="img-container">
+            <img src="{{ list.listing.img_url }}" alt="">
+        </div>
+        <div class="content-container">
+            <h3> {{ list.listing.title }} </h3>
+            <p> {{ list.listing.description }} </p>
+        </div>
+        <div class="price">
+            <p>${{ list.listing.price }}</p>
+            <a href="{% url 'listing' list.listing.id %}">
+                <button>
+                    Visit
+                </button>
+            </a>
+        </div>
+    </div>
+    
+{% endfor %}
+
+{% endif %}
+
+

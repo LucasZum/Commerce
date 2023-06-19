@@ -1,0 +1,74 @@
+<div class="listing">
+
+
+    <div class="title">
+        <h1>{{ listing.title }}</h1>
+    </div>
+
+    <div class="img-container">
+
+        <img src="{{ listing.img_url }}" alt="">
+
+    </div>
+    <div class="content">
+        <div class="description">
+            {{ listing.description }}
+        </div>
+
+        <div class="price">
+            <p class="price-p">${{ listing.price }}</p>
+            {% include 'auctions/partials/messages.html' %}
+            {% if user.is_authenticated %}                
+            <form class="bid-form" action=" {% url 'bid' %} " method="POST">
+                {% csrf_token %}
+                <input class="hidden" type="hidden" name="id" value="{{ listing.id }}">
+                <input type="number" name="bid" placeholder="$0,00" required>
+                <button>Bid</button>
+            </form>
+            {% if not is_added %}                    
+            <a href="{% url 'add_watchlist' listing.id %}">
+                <button class="watchlist-button">
+                    Add to watchlist
+                </button>
+            </a>
+            {% else %}
+            <a href="{% url 'del_watchlist' listing.id %}">
+                <button class="watchlist-button-remove">
+                    Remove to watchlist
+                </button>
+            </a>
+            {% endif %}
+            {% else %}
+            <a href="{% url 'login' %}">
+                <button>Buy</button>
+            </a>
+            {% endif %}
+            <p class="ultimate-bids" >Ultmate bids</p>
+
+            {% include 'auctions/partials/bids.html' %}
+        </div>
+    </div>
+
+
+    <br><br>
+
+    <h2>Details</h2>
+    <br>
+    <p>
+        Author: {{ listing.author }}
+    </p>
+    <p>
+        Category: {{ listing.category }}
+    </p>
+
+</div>
+
+{% if im_author  %}
+
+<div class="close-action-container">
+    <a href=" {% url 'close_auction' listing.id %} ">
+        <button class="watchlist-button-remove">Close auction</button>
+    </a>
+</div>
+{% endif %}
+{% include 'auctions/partials/comments.html' %}

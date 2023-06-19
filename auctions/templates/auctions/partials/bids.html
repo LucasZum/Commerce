@@ -1,0 +1,14 @@
+{% if bid %}
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Bid</th>
+        </tr>
+        {% for bid in bid %}
+            <tr>
+                <td>{{ bid.author }}</td>
+                <td>{{ bid.bid }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
